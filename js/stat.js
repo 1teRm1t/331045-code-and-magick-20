@@ -39,7 +39,7 @@ var getMaxElement = function (arr) {
   return maxElement;
 };
 
-var playerColor = function (ctx, players) {
+var indicatesPlayersColor = function (ctx, players) {
   ctx.fillStyle = 'hsl(240,' + Math.floor(Math.random() * 100) + '%, 50%)';
   if (players === 'Вы') {
     ctx.fillStyle = 'rgba(255, 0, 0, 1)';
@@ -61,7 +61,7 @@ window.renderStatistics = function (ctx, players, times) {
     renderText(ctx, players[i], CLOUD_X + GAP_X + ((COLUMN_WIDTH + COLUMN_GAP) * i), CLOUD_Y + COLUMN_HEIGHT + GAP_Y);
     renderText(ctx, Math.round(times[i]), CLOUD_X + GAP_X + ((COLUMN_WIDTH + COLUMN_GAP) * i), (GAP_Y + (COLUMN_HEIGHT - columnHeight)) - 2 * GAP);
 
-    playerColor(ctx, players[i]);
+    indicatesPlayersColor(ctx, players[i]);
     renderHistogram(ctx, CLOUD_X + GAP_X + ((COLUMN_WIDTH + COLUMN_GAP) * i), GAP_Y + (COLUMN_HEIGHT - columnHeight), COLUMN_WIDTH, columnHeight);
   }
 };
