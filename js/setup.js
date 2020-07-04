@@ -60,9 +60,9 @@ var getFragment = function () {
 
 getFragment();
 
-
 var setupOpen = document.querySelector('.setup-open');
 var setup = document.querySelector('.setup');
+setup.classList.add('hidden');
 var setupClose = setup.querySelector('.setup-close');
 var setupSubmit = setup.querySelector('.setup-submit');
 setupClose.setAttribute('tabindex', 0);
@@ -76,7 +76,6 @@ var fireballColorValue = setupWizardForm.querySelector('.fireball-color-input');
 var wizardCoat = setupWizardForm.querySelector('.wizard-coat');
 var wizardEyes = setupWizardForm.querySelector('.wizard-eyes');
 var fireBall = setupWizardForm.querySelector('.setup-fireball-wrap');
-
 
 var onPopupEscPress = function (evt) {
   if (evt.key === 'Escape' || evt.key === 'Enter') {
@@ -119,7 +118,6 @@ var closePopup = function () {
   wizardEyes.removeEventListener('click', randomEyesColor);
   fireBall.removeEventListener('click', randomFireballColor);
   setupSubmit.removeEventListener('click', submitForm);
-
   setupClose.removeEventListener('keydown', onPopupEscPress);
 };
 
